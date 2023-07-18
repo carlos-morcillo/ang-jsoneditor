@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngJsoneditorModule } from "ang-jsoneditor";
+import { NgxJsonBuilderModule } from 'ngx-json-builder';
 
 import { AppComponent } from './app.component';
-import {ShowComponent} from "./show.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ShowComponent } from './show.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShowComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngJsoneditorModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, ShowComponent],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		ReactiveFormsModule,
+		NgxJsonBuilderModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

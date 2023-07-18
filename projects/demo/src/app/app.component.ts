@@ -1,15 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
+import { JsonEditorComponent, JsonEditorOptions } from 'ngx-json-builder';
 import { UntypedFormBuilder } from '@angular/forms';
 import { schema } from './schema.value';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
   public editorOptions: JsonEditorOptions;
   public data: any;
 
@@ -29,46 +28,48 @@ export class AppComponent implements OnInit {
   public formData;
 
   dataMulti: any = {
-    products: [{
-      name: 'car',
-      product: [{
-        name: 'honda',
-        model: [
-          { id: 'civic', name: 'civic' },
-          { id: 'accord', name: 'accord' },
-          { id: 'crv', name: 'crv' },
-          { id: 'pilot', name: 'pilot' },
-          { id: 'odyssey', name: 'odyssey' }
-        ]
-      }]
-    },
+    products: [
+      {
+        name: 'car',
+        product: [
+          {
+            name: 'honda',
+            model: [
+              { id: 'civic', name: 'civic' },
+              { id: 'accord', name: 'accord' },
+              { id: 'crv', name: 'crv' },
+              { id: 'pilot', name: 'pilot' },
+              { id: 'odyssey', name: 'odyssey' },
+            ],
+          },
+        ],
+      },
       {
         name: 'book',
-        product: [{
-          name: 'dostoyevski',
-          model: [
-            { id: 'Axe', name: 'Axe' },
-            { id: 'accord', name: 'accord' },
-            { id: 'crv', name: 'crv' },
-            { id: 'pilot', name: 'pilot' },
-            { id: 'odyssey', name: 'odyssey' }
-          ]
-        }]
-      }
-    ]
+        product: [
+          {
+            name: 'dostoyevski',
+            model: [
+              { id: 'Axe', name: 'Axe' },
+              { id: 'accord', name: 'accord' },
+              { id: 'crv', name: 'crv' },
+              { id: 'pilot', name: 'pilot' },
+              { id: 'odyssey', name: 'odyssey' },
+            ],
+          },
+        ],
+      },
+    ],
   };
 
   constructor(public fb: UntypedFormBuilder) {
-
     this.editorOptions = new JsonEditorOptions();
     this.editorOptions.schema = schema;
-
-
 
     this.initEditorOptions(this.editorOptions);
 
     this.editorOptions2 = new JsonEditorOptions();
-    this.initEditorOptions(this.editorOptions2)
+    this.initEditorOptions(this.editorOptions2);
 
     console.log('bllaaa first');
   }
@@ -77,31 +78,32 @@ export class AppComponent implements OnInit {
     console.log('bllaaa');
 
     this.showData = this.data = {
-      'randomNumber': 2,
-      'products': [
+      randomNumber: 2,
+      products: [
         {
-          'name': 'car',
-          'product':
-            [
-              {
-                'name': 'honda',
-                'model': [
-                  { 'id': 'civic', 'name': 'civic' },
-                  { 'id': 'accord', 'name': 'accord' }, { 'id': 'crv', 'name': 'crv' },
-                  { 'id': 'pilot', 'name': 'pilot' }, { 'id': 'odyssey', 'name': 'odyssey' }
-                ]
-              }
-            ]
-        }
-      ]
+          name: 'car',
+          product: [
+            {
+              name: 'honda',
+              model: [
+                { id: 'civic', name: 'civic' },
+                { id: 'accord', name: 'accord' },
+                { id: 'crv', name: 'crv' },
+                { id: 'pilot', name: 'pilot' },
+                { id: 'odyssey', name: 'odyssey' },
+              ],
+            },
+          ],
+        },
+      ],
     };
 
     this.data2 = {
-      'nedata': 'test'
+      nedata: 'test',
     };
 
     this.form = this.fb.group({
-      myinput: [this.data2]
+      myinput: [this.data2],
     });
 
     // this.editorOptions.onChange = this.changeLog.bind(this);
@@ -117,11 +119,11 @@ export class AppComponent implements OnInit {
      * if the change does not meet the JSON Schema, it will use the last data
      * and will revert the user change.
      */
-    const editorJson = this.editor.getEditor()
-    editorJson.validate()
-    const errors = editorJson.validateSchema.errors
+    const editorJson = this.editor.getEditor();
+    editorJson.validate();
+    const errors = editorJson.validateSchema.errors;
     if (errors && errors.length > 0) {
-      console.log('Errors found', errors)
+      console.log('Errors found', errors);
       editorJson.set(this.showData);
     } else {
       this.showData = this.editor.get();
@@ -144,7 +146,9 @@ export class AppComponent implements OnInit {
   }
 
   setAce() {
-    const aceEditor = (<any>window).ace.edit(document.querySelector('#a' + this.editor.id + '>div'));
+    const aceEditor = (<any>window).ace.edit(
+      document.querySelector('#a' + this.editor.id + '>div')
+    );
     // custom your ace here
     aceEditor.setReadOnly(true);
     aceEditor.setFontSize('110pt');
@@ -165,11 +169,11 @@ export class AppComponent implements OnInit {
   customLanguage() {
     this.editorOptions.languages = {
       'pt-BR': {
-        'auto': 'Automático testing'
+        auto: 'Automático testing',
       },
-      'en': {
-        'auto': 'Auto testing'
-      }
+      en: {
+        auto: 'Auto testing',
+      },
     };
     this.editor.setOptions(this.editorOptions);
   }
@@ -179,8 +183,9 @@ export class AppComponent implements OnInit {
   }
 
   changeData() {
-    this.data = Object.assign({}, this.data,
-      { randomNumber: Math.floor(Math.random() * 8) });
+    this.data = Object.assign({}, this.data, {
+      randomNumber: Math.floor(Math.random() * 8),
+    });
   }
 
   /**
@@ -200,12 +205,11 @@ export class AppComponent implements OnInit {
   }
 
   showJson(d) {
-    console.log(d)
+    console.log(d);
     this.EditedData = JSON.stringify(d, null, 2);
   }
 
   makeOptions = () => {
     return new JsonEditorOptions();
-  }
-
+  };
 }

@@ -3,9 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "ang-jsoneditor": [
-        "dist/ang-jsoneditor/ang-jsoneditor",
-        "dist/ang-jsoneditor"
+      "ngx-json-builder": [
+        "dist/ngx-json-builder/ngx-json-builder",
+        "dist/ngx-json-builder"
       ]
     },
     "baseUrl": "./",

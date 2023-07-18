@@ -1,11 +1,11 @@
 {
-  "name": "ang-jsoneditor",
+  "name": "ngx-json-builder",
   "version": "0.0.0",
   "scripts": {
     "serve:demo": "cd projects/demo && ng serve",
-    "build:lib": "ng build ang-jsoneditor",
-    "watch:lib": "ng build ang-jsoneditor --watch",
-    "publish": "cp README.md projects/ang-jsoneditor/ && npm run build:lib && cd dist/ang-jsoneditor && npm publish && rm README.md"
+    "build:lib": "ng build ngx-json-builder",
+    "watch:lib": "ng build ngx-json-builder --watch",
+    "publish": "cp README.md projects/ngx-json-builder/ && npm run build:lib && cd dist/ngx-json-builder && npm publish && rm README.md"
   },
   "private": false,
   "dependencies": {

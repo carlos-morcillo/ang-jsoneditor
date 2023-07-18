@@ -1,0 +1,27 @@
+{
+	"name": "ngx-json-builder",
+	"version": "16.0.1",
+	"license": "MIT",
+	"homepage": "https://github.com/carlos-morcillo/ngx-json-builder",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/carlos-morcillo/ngx-json-builder"
+	},
+	"author": "Max Großmann <github@maax.gr>, Mario Mol <mariohmol@gmail.com>, Manish Sodavadiya <manish_it56@yahoo.com>",
+	"contributors": [
+		"Carlos Morcilllo Fernández <carlos.morcillo@me.com>"
+	],
+	"keywords": [
+		"angular",
+		"jsoneditor",
+		"ngx-json-builder"
+	],
+	"peerDependencies": {
+		"@angular/common": "^16",
+		"@angular/core": "^16",
+		"jsoneditor": "^9.1.4"
+	},
+	"dependencies": {
+		"tslib": "^2.3.0"
+	}
+}
