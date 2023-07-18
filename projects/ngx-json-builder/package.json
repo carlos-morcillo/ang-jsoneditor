@@ -1,6 +1,6 @@
 {
 	"name": "ngx-json-builder",
-	"version": "16.0.1",
+	"version": "16.0.2",
 	"license": "MIT",
 	"homepage": "https://github.com/carlos-morcillo/ngx-json-builder",
 	"repository": {
@@ -14,7 +14,8 @@
 	"keywords": [
 		"angular",
 		"jsoneditor",
-		"ngx-json-builder"
+		"ngx-json-builder",
+		"ang-jsoneditor"
 	],
 	"peerDependencies": {
 		"@angular/common": "^16",
